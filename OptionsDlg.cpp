@@ -35,15 +35,15 @@ BOOL CALLBACK dlgProcOptions(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPar
 				case IDC_BUTTON_BROWSE: {
 					TCHAR path[MAX_PATH];
 					BROWSEINFO bi = { 0 };
+					bi.ulFlags = BIF_USENEWUI | BIF_NONEWFOLDERBUTTON;
 					bi.lpfn = BrowseForFolderCallBack;
-					bi.lpszTitle = TEXT("Select the folder that contains Python executable:");
+					bi.lpszTitle = TEXT("Pick Python folder:");
 					LPITEMIDLIST pidl = SHBrowseForFolder ( &bi );
 	
 					if (pidl != 0) {
 						SHGetPathFromIDList(pidl, path);
 						SetDlgItemText(hwnd, IDC_EDIT_PATH, path);
 					}
-
 					return TRUE;
 				}
 				case IDCLOSE:
