@@ -148,11 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AboutDlg.h" />
-    <ClInclude Include="dockingfeature\Docking.h" />
-    <ClInclude Include="dockingfeature\DockingDlgInterface.h" />
-    <ClInclude Include="dockingfeature\dockingResource.h" />
     <ClInclude Include="dockingfeature\resource.h" />
-    <ClInclude Include="dockingfeature\Window.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="IniFileProcessor.h" />
     <ClInclude Include="IniProcessor.h" />
@@ -161,7 +157,6 @@
     <ClInclude Include="OptionsDlg.h" />
     <ClInclude Include="PluginDefinition.h" />
     <ClInclude Include="PluginInterface.h" />
-    <ClInclude Include="Scintilla.h" />
     <ClInclude Include="strconvert.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
