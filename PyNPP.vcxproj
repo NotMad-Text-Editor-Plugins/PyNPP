@@ -58,12 +58,14 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\plugins_dev.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\plugins_dev.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -114,6 +116,7 @@
     <Link>
       <AdditionalDependencies>shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
+      <OutputFile>$(DLLOU)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -121,16 +124,18 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <WarningLevel>Level3</WarningLevel>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(PowerEditor)/../plugins/CPPCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
+      <OutputFile>$(DLLOU)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\PowerEditor\src\WinControls\StaticDialog\StaticDialog.cpp" />
+    <ClCompile Include="..\CPPCommon\common_patch.cpp" />
     <ClCompile Include="AboutDlg.cpp" />
-    <ClCompile Include="dockingfeature\GoToLineDlg.cpp" />
-    <ClCompile Include="dockingfeature\StaticDialog.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="IniFileProcessor.cpp" />
     <ClCompile Include="IniProcessor.cpp" />
@@ -146,28 +151,22 @@
     <ClInclude Include="dockingfeature\Docking.h" />
     <ClInclude Include="dockingfeature\DockingDlgInterface.h" />
     <ClInclude Include="dockingfeature\dockingResource.h" />
-    <ClInclude Include="dockingfeature\GoToLineDlg.h" />
     <ClInclude Include="dockingfeature\resource.h" />
-    <ClInclude Include="dockingfeature\StaticDialog.h" />
     <ClInclude Include="dockingfeature\Window.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="IniFileProcessor.h" />
     <ClInclude Include="IniProcessor.h" />
     <ClInclude Include="IniValue.h" />
     <ClInclude Include="menuCmdID.h" />
-    <ClInclude Include="Notepad_plus_msgs.h" />
     <ClInclude Include="OptionsDlg.h" />
     <ClInclude Include="PluginDefinition.h" />
     <ClInclude Include="PluginInterface.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Scintilla.h" />
     <ClInclude Include="strconvert.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="dockingfeature\goLine.rc" />
-    <ResourceCompile Include="PyNPP_RES.rc" />
-    <ResourceCompile Include="versionRC.rc" />
+    <ResourceCompile Include="DockingFeature\PyNPP.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

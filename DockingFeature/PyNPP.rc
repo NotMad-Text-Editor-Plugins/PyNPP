@@ -68,7 +68,7 @@ CAPTION "About PyNPP"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,51,111,50,14
-    CTEXT           "PyNPP v.1.2.1\n\nA Notepad++ plugin to run Python scripts from inside Notepad++.\n\nCreated by\n\nAbdullah Diab\nmpcabd@gmail.com\nhttp://mpcabd.xyz\n\nhttps://github.com/mpcabd/PyNPP",IDC_STATIC,7,7,135,103
+    CTEXT           "PyNPP v.1.2.1\n\nA Notepad++ plugin to run Python scripts from inside Notepad++.\n\nBundled with Textrument v0.1.1\r\nCreated by\n\nAbdullah Diab\nmpcabd@gmail.com\nhttp://mpcabd.xyz\n\nhttps://github.com/mpcabd/PyNPP",IDC_STATIC,7,7,135,103
 END
 
 
@@ -107,6 +107,45 @@ END
 IDD_ABOUT_DIALOG AFX_DIALOG_LAYOUT
 BEGIN
     0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,2,1,0
+ PRODUCTVERSION 1,2,1,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x17L
+#else
+ FILEFLAGS 0x16L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Abdullah Diab"
+            VALUE "FileDescription", "PyNPP Textrument Plugin"
+            VALUE "FileVersion", "1.2"
+            VALUE "InternalName", "PyNPP"
+            VALUE "LegalCopyright", "GPLv3"
+            VALUE "OriginalFilename", "PyNPP.dll"
+            VALUE "ProductName", "PyNPP"
+            VALUE "ProductVersion", "1.2"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
 END
 
 #endif    // Arabic (Syria) resources

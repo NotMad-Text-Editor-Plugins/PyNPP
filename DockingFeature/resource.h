@@ -1,31 +1,22 @@
-//this file is part of notepad++
-//Copyright (C)2003 Don HO <donho@altern.org>
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by PyNPP.rc
 //
-//This program is free software; you can redistribute it and/or
-//modify it under the terms of the GNU General Public License
-//as published by the Free Software Foundation; either
-//version 2 of the License, or (at your option) any later version.
-//
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//GNU General Public License for more details.
-//
-//You should have received a copy of the GNU General Public License
-//along with this program; if not, write to the Free Software
-//Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#define VER_DEBUG                       0
+#define IDD_OPTIONS_DIALOG              102
+#define IDD_ABOUT_DIALOG                103
+#define IDC_BUTTON_BROWSE               1001
+#define IDC_EDIT_PATH                   1002
+#define IDC_STATIC_PATH                 1003
+#define IDC_STATIC                      -1
 
-#ifndef RESOURCE_H
-#define RESOURCE_H
-
-
-#ifndef IDC_STATIC
-#define IDC_STATIC	-1
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        104
+#define _APS_NEXT_COMMAND_VALUE         40001
+#define _APS_NEXT_CONTROL_VALUE         1004
+#define _APS_NEXT_SYMED_VALUE           101
 #endif
-
-#define	IDD_PLUGINGOLINE_DEMO		2500
-#define	ID_GOLINE_EDIT	(IDD_PLUGINGOLINE_DEMO + 1)
-#define	ID_UGO_STATIC  (IDD_PLUGINGOLINE_DEMO + 5)
-
-#endif // RESOURCE_H
-
+#endif

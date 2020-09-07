@@ -1,7 +1,7 @@
 #include "OptionsDlg.h"
 #include "globals.h"
 #include "utility.h"
-#include "resource.h"
+#include "./DockingFeature/resource.h"
 
 #include <shlobj.h>
 

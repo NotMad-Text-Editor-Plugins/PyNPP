@@ -17,7 +17,7 @@
 
 #include "PluginDefinition.h"
 #include "menuCmdID.h"
-#include "resource.h"
+#include "./DockingFeature/resource.h"
 #include "OptionsDlg.h"
 #include "AboutDlg.h"
 #include <string>
