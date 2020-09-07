@@ -163,3 +163,8 @@ END
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
 
+
+
+IDB_BITMAP_EXEC               BITMAP                  "..\\res\\python.bmp"
+
+IDI_ICON_EXEC       ICON                     "..\\res\\python.ico"

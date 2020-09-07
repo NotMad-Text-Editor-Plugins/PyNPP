@@ -163,6 +163,10 @@
   <ItemGroup>
     <ResourceCompile Include="DockingFeature\PyNPP.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\python.bmp" />
+    <None Include="res\python.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

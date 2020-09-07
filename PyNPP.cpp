@@ -17,6 +17,7 @@
 
 #include "PluginDefinition.h"
 #include "utility.h"
+#include "./DockingFeature/resource.h"
 
 extern FuncItem funcItem[nbFunc];
 extern NppData nppData;
@@ -69,7 +70,25 @@ extern "C" __declspec(dllexport) FuncItem * getFuncsArray(int *nbF)
 
 extern "C" __declspec(dllexport) void beNotified(SCNotification *notifyCode)
 {
+	int code = notifyCode->nmhdr.code;
+	if ((notifyCode->nmhdr.hwndFrom == nppData._nppHandle) && 
+		(code == NPPN_TBMODIFICATION))
+	{
+		/* add toolbar icon */
+		auto HRO = (HINSTANCE) _hInst;
 
+		long filecount2 = ::SendMessage(nppData._nppHandle, NPPM_GETNBOPENFILES, 0, (LPARAM)PRIMARY_VIEW);
+
+		long version = ::SendMessage(nppData._nppHandle, NPPM_GETNOTMADVERSION, 0, 0);
+
+		bool legacy = version<0x666;
+
+		static toolbarIcons TBEXEC{0,0,0x666,HRO,IDI_ICON_EXEC,0,0,IDB_BITMAP_EXEC};
+
+		if(legacy)TBEXEC.hToolbarBmp = (HBITMAP)::LoadImage(HRO, MAKEINTRESOURCE(IDB_BITMAP_EXEC), IMAGE_BITMAP, 0,0, (LR_DEFAULTSIZE | LR_LOADMAP3DCOLORS));
+		
+		::SendMessage(nppData._nppHandle, NPPM_ADDTOOLBARICON, (WPARAM)funcItem[1]._cmdID, (LPARAM)&TBEXEC);
+	}
 }
 
 extern "C" __declspec(dllexport) LRESULT messageProc(UINT Message, WPARAM wParam, LPARAM lParam)
