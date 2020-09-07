@@ -234,7 +234,7 @@ void run(bool isW, bool isI, bool isPDB) {
 			MessageBox(NULL, message.c_str(), TEXT("Run Failed"), 0);
 		}
 	} else {
-		MessageBox(NULL, TEXT("You should save your file to be able to run it."), TEXT("Run Failed"), 0);
+		//MessageBox(NULL, TEXT("You should save your file to be able to run it."), TEXT("Run Failed"), 0);
 	}
 }
 
